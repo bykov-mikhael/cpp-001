@@ -1,3 +1,6 @@
+#include <math.h>
+
+#include <cmath>
 #include <iostream>
 
 int main() {
@@ -24,19 +27,46 @@ int main() {
   /** Пользователь вводит две границы лдиапазона.Посчитать сумму
               всех чисел диапазона */
 
-  int limit001{0}, limit002{0}, sum{0};
+  //   int limit001{0}, limit002{0}, sum{0};
 
-  std::cout << "limit 001 ";
-  std::cin >> limit001;
+  //   std::cout << "limit 001: ";
+  //   std::cin >> limit001;
 
-  std::cout << "limit 002 ";
-  std::cin >> limit002;
+  //   std::cout << "limit 002: ";
+  //   std::cin >> limit002;
 
-  for (int i = limit001; i <= limit002; i++) {
-    sum += i;
-  }
+  //   for (int i = limit001; i <= limit002; i++) {
+  //     sum += i;
+  //   }
 
-  std::cout << "Сумма чисел: " << sum << std::endl;
+  //   std::cout << "Сумма чисел: " << sum << std::endl;
+
+  /** Пользователь с клавиатуры вводит числа.Посчитать сумму и вывести на
+      экран, как только пользователь введет 0 */
+
+  //   int total{0}, input001;
+
+  //   std::cout << "Введите число: ";
+
+  //   do {
+  //     std::cin >> input001;
+  //     total += input001;
+  //   } while (input001 != 0);
+
+  //   std::cout << "Сумма чисел: " << total << std::endl;
+
+  /** Напишите программу, которая запрашивает два целых числа х и у, после чего
+   * вычисляет и выводит значение х в степени у */
+
+  int x, y;
+
+  std::cout << "Введите х: ";
+  std::cin >> x;
+
+  std::cout << "Введите y: ";
+  std::cin >> y;
+
+  std::cout << "x в степени у = " << pow(x, y) << std::endl;
 
   std::cout << std::endl;
 
