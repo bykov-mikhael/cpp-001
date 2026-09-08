@@ -58,15 +58,15 @@ int main() {
   /** Напишите программу, которая запрашивает два целых числа х и у, после чего
    * вычисляет и выводит значение х в степени у */
 
-  int x, y;
+  //   int x, y;
 
-  std::cout << "Введите х: ";
-  std::cin >> x;
+  //   std::cout << "Введите х: ";
+  //   std::cin >> x;
 
-  std::cout << "Введите y: ";
-  std::cin >> y;
+  //   std::cout << "Введите y: ";
+  //   std::cin >> y;
 
-  std::cout << "x в степени у = " << pow(x, y) << std::endl;
+  //   std::cout << "x в степени у = " << pow(x, y) << std::endl;
 
   std::cout << std::endl;
 
