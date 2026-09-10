@@ -9,6 +9,9 @@
 #include "tsk003/tsk003.hpp"
 #include "tsk004/tsk004.hpp"
 
+constexpr int delayFine = 20;
+constexpr int incomePer100CodeString = 50;
+
 int main() {
   std::cout << "tsk001" << std::endl;
   std::cout << "Введите число: ";
@@ -33,57 +36,78 @@ int main() {
   std::cout << "Сумма чисел: " << sum << std::endl;
 
   std::cout << "tsk004" << std::endl;
+  int x, y;
+
+  std::cout << "x: ";
+  std::cin >> x;
+
+  std::cout << "y: ";
+  std::cin >> y;
+
+  std::cout << "x в степени y: " << tsk004(x, y) << std::endl;
+
+  std::cout << "tsk005" << std::endl;
   /** Вася работает программистом и поулчает 50$ за каждые 100 строк кода. За
    * каждое третье опоздание на работу Васю штрафуют на 20$. Реализовать меню:
    */
-  // int choice;
+  int choice, income, string, delay;
 
-  // std::system("clear");
+  std::system("clear");
 
-  // std::cout << "========== ГЛАВНОЕ МЕНЮ ==========" << std::endl;
-  // std::cout << "1. Ввести желаемый доход Васи, кол-во опозданий, посчитать "
-  //              "сколько сколько строк кода надо написать"
-  //           << std::endl;
-  // std::cout << "2. Ввести необходимое кол-во строк кода, написанное Васей и "
-  //              "желаемый объем ЗП; посчитать сколько раз Вася может опоздать"
-  //           << std::endl;
-  // std::cout << "3. Выход" << std::endl;
-  // std::cout << "==================================" << std::endl;
+  std::cout << "========== ГЛАВНОЕ МЕНЮ ==========" << std::endl;
+  std::cout << "1. Ввести желаемый доход Васи, кол-во опозданий, посчитать "
+               "сколько сколько строк кода надо написать"
+            << std::endl;
+  std::cout << "2. Ввести необходимое кол-во строк кода, написанное Васей и "
+               "желаемый объем ЗП; посчитать сколько раз Вася может опоздать"
+            << std::endl;
+  std::cout << "3. Выход" << std::endl;
+  std::cout << "==================================" << std::endl;
 
-  // std::cout << "Выберите пункт: ";
-  // std::cin >> choice;
+  std::cout << "Выберите пункт: ";
+  std::cin >> choice;
 
-  // switch (choice) {
-  //   case 1:
-  //     std::cout << "-=Рассчёт кол-ва строк кода=-" << std::endl;
-  //     int income, delay;
+  switch (choice) {
+    case 1:
+      std::cout << "-=Рассчёт кол-ва строк кода=-" << std::endl;
 
-  //     std::cout << "Введите ожидаемый доход: ";
-  //     std::cin >> income;
+      std::cout << "Введите ожидаемый доход: ";
+      std::cin >> income;
 
-  //     std::cout << "Введите предполагаемое кол-во опозданий: ";
-  //     std::cin >> delay;
+      std::cout << "Введите предполагаемое кол-во опозданий: ";
+      std::cin >> delay;
 
-  //     std::cout << "Необходимо написать " << income << " строк кода"
-  //               << std::endl;
-  //     break;
-  //   case 2:
-  //     std::cout << "Рассчёт кол-ва опозданий" << std::endl;
-  //     // Здесь код загрузки
-  //     break;
-  //   case 3:
-  //     std::cout << "Выход" << std::endl;
-  //     // Здесь код настроек
-  //     break;
-  //   default:
-  //     std::cout << "Неверный выбор! Попробуйте снова." << std::endl;
-  // }
+      std::cout << "Необходимо написать "
+                << (income - delay * delayFine) / incomePer100CodeString
+                << " строк кода" << std::endl;
+      break;
+    case 2:
+      std::cout << "Рассчёт кол-ва опозданий" << std::endl;
+      int income, delay;
 
-  // if (choice != 3) {
-  //   std::cout << "\nНажмите Enter для продолжения...";
-  //   std::cin.ignore();
-  //   std::cin.get();
-  // }
+      std::cout << "Введите ожидаемый доход: ";
+      std::cin >> income;
+
+      std::cout << "Введите требуемое кол-во строк: ";
+      std::cin >> string;
+
+      std::cout << (string * incomePer100CodeString - income) / delayFine
+                << " опозданий может быть" << std::endl;
+
+      break;
+    case 3:
+      std::cout << "Выход" << std::endl;
+      // Здесь код настроек
+      break;
+    default:
+      std::cout << "Неверный выбор! Попробуйте снова." << std::endl;
+  }
+
+  if (choice != 3) {
+    std::cout << "\nНажмите Enter для продолжения...";
+    std::cin.ignore();
+    std::cin.get();
+  }
   /** Посчитать все числа от 0 до введеного числа:
    *  - четные
    *  - нечетные

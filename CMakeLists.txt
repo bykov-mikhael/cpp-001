@@ -88,7 +88,8 @@ enable_testing()
 
 add_executable(
     tests
-    tests/test-002.cpp)
+    tests/test-002.cpp
+    tests/test-004.cpp)
 
 target_link_libraries(
     tests
