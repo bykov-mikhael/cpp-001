@@ -8,6 +8,7 @@
 #include "tsk002/tsk002.hpp"
 #include "tsk003/tsk003.hpp"
 #include "tsk004/tsk004.hpp"
+#include "tsk005/tsk005.hpp"
 
 constexpr int delayFine = 20;
 constexpr int incomePer100CodeString = 50;
@@ -77,9 +78,11 @@ int main() {
       std::cout << "Введите предполагаемое кол-во опозданий: ";
       std::cin >> delay;
 
-      std::cout << "Необходимо написать "
-                << (income - delay * delayFine) / incomePer100CodeString
+      std::cout << "Необходимо написать " << tsk051(income, delay)
                 << " строк кода" << std::endl;
+
+      // (ЗП, руб - опоздания, дн * штрф, руб ) / Оплата, руб
+
       break;
     case 2:
       std::cout << "Рассчёт кол-ва опозданий" << std::endl;
@@ -91,8 +94,8 @@ int main() {
       std::cout << "Введите требуемое кол-во строк: ";
       std::cin >> string;
 
-      std::cout << (string * incomePer100CodeString - income) / delayFine
-                << " опозданий может быть" << std::endl;
+      std::cout << tsk052(string, income) << " опозданий может быть"
+                << std::endl;
 
       break;
     case 3:

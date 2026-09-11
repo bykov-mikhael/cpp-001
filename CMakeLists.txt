@@ -62,6 +62,17 @@ target_include_directories(tsk004
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 #===================================================================================================#
+#                                    Библиотека tsk005                                              #
+#===================================================================================================#
+add_library(tsk005 STATIC
+    include/tsk005/tsk005.cpp
+)
+
+target_include_directories(tsk005
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+#===================================================================================================#
 #                               Основная программа                                                  #
 #===================================================================================================#
 add_executable(cpp-001
@@ -75,6 +86,7 @@ target_link_libraries(cpp-001
         tsk002
         tsk003
         tsk004
+        tsk005
 )
                 
 set_target_properties(cpp-001 PROPERTIES
@@ -89,7 +101,8 @@ enable_testing()
 add_executable(
     tests
     tests/test-002.cpp
-    tests/test-004.cpp)
+    tests/test-004.cpp
+    tests/test-005.cpp)
 
 target_link_libraries(
     tests
@@ -98,6 +111,7 @@ target_link_libraries(
         tsk002
         tsk003
         tsk004
+        tsk005
         GTest::gtest_main)
 
 include(GoogleTest)
